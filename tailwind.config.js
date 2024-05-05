@@ -7,7 +7,7 @@ module.exports = {
         darkBg: "#00000089",
         ytext: "#D99800FF",
         darkBlue: "#171c21",
-        fadeBg: "#80808080",
+        fadeBg: "#2f3026a1",
       },
     },
   },

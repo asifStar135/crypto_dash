@@ -26,4 +26,25 @@ export const styles = StyleSheet.create({
     height: 50,
     borderRadius: 10,
   },
+  loadingImg: {
+    width: 100,
+    height: 60,
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+  },
+  categoryIcon: {
+    width: 60,
+    height: 60,
+    resizeMode: "cover",
+  },
+  newsImg: {
+    height: 200,
+    width: 380,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "gray",
+  },
 });

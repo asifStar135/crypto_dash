@@ -1,34 +1,25 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import API from "../../api";
-import Top from "./Top";
-import Trending from "./Trending";
+import Body from "./Body";
+import api from "../../api";
 
-const Home = () => {
-  const [trendingList, setTrendingList] = useState([]);
+const Home = ({ route }) => {
+  const { news, user, watchList } = route.params;
+  const [watchlistCoins, setWatchlistCoins] = useState([]);
 
-  const fetchList = async () => {
-    let list = await API.GetAllAssetList();
-
-    // console.log(list);
-  };
-  const fetchTrending = async () => {
-    let list = await API.TrendingCoins();
-
-    setTrendingList(list);
+  const init = async () => {
+    const list = await api.getWatchListData();
+    setWatchlistCoins(list);
   };
 
   useEffect(() => {
-    //   fetchList();
-    fetchTrending();
+    init();
   }, []);
 
   return (
     <ScrollView className="w-full bg-darkBlue">
-      <View className="h-full p-2">
-        <Top />
-        <Trending trendingList={trendingList} />
-      </View>
+      <Body _this={{ user, watchList, watchlistCoins }} />
     </ScrollView>
   );
 };
